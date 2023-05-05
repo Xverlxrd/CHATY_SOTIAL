@@ -1,0 +1,61 @@
+.sidebar__container{
+    padding-top: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+.sidebar__friends_list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #B3CDF8;
+    border-radius: 20px;
+    row-gap: 30px;
+    height: 356px;
+    justify-content: center;
+}
+.sidebar__friends_item{
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+    padding-left: 34px;
+}
+.friends__item_logo{
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+}
+.friends__item_img{
+    width: 100%;
+    height: 100%;
+}
+.friends__item_name{
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #333333;
+}
+.sidebar__nav_list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #B3CDF8;
+    border-radius: 20px;
+    row-gap: 30px;
+    height: 356px;
+    justify-content: center;
+}
+.sidebar__nav_item{
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+    padding-left: 34px;
+}
+.nav__item_title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 18px;
+    color: #333333;
+}

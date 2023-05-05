@@ -1,0 +1,12 @@
+.page__container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.content__container{
+    min-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template: 1fr / 24.8% auto;
+}
