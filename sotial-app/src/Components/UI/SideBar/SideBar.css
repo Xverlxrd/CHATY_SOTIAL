@@ -52,10 +52,12 @@
     column-gap: 12px;
     align-items: center;
     padding-left: 34px;
+
 }
 .nav__item_title{
     font-weight: 700;
     font-size: 24px;
     line-height: 18px;
     color: #333333;
+
 }

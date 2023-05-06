@@ -3,8 +3,6 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {routes} from "./data";
 import Loy from "../Loy/Loy";
 
-
-
 const PrivateRoutes:FC = () => {
     const isAuth = true;
     return (
@@ -21,8 +19,8 @@ const PrivateRoutes:FC = () => {
                         element={
                             <>
                                 <Loy><route.component /></Loy>
-
-                            </>}
+                            </>
+                        }
                         />
                     )
                 })}

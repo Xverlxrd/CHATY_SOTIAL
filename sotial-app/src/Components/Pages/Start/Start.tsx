@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FC} from 'react';
 import './Start.css';
 
-const Start = () => {
+const Start:FC = () => {
     return (
         <div >
             Home
