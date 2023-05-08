@@ -1,4 +1,9 @@
 import Start from "../../Pages/Start/Start";
+import Massage from "../../Pages/Message/Massage";
+import Profile from "../../Pages/Profile/Profile";
+import Friends from "../../Pages/Friends/Friends";
+import Auth from "../../Pages/Auth/Auth";
+import Chat from "../../Pages/Message/Chat/Chat";
 export const routes = [
     {
         path: '/',
@@ -7,27 +12,27 @@ export const routes = [
     },
     {
         path: '/profile/:id',
-        component: Start,
+        component: Profile,
         auth: true,
     },
     {
         path: '/message:id',
-        component: Start,
+        component: Chat,
         auth: true,
     },
     {
         path: '/messages',
-        component: Start,
+        component: Massage,
         auth: true,
     },
     {
         path: '/friends:id',
-        component: Start,
+        component: Friends,
         auth: true,
     },
     {
         path: '/auth',
-        component: Start,
+        component: Auth,
         auth: false,
     },
 ]

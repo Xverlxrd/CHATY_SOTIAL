@@ -8,19 +8,19 @@ interface IPosts {
 }
 
 
-const Posts:FC<IPosts> = ({posts}) => {
+const Posts: FC<IPosts> = ({posts}) => {
     return (
         <>
             {posts.map(post => (
-                <div className={'post__item'}>
-                    <Link to={`/profile/${post.author._id}`} key={post.author._id}>
+                <div key={post.author._id} className={'post__item'}>
+                    <Link to={`/profile/${post.author._id}`}>
                         <li className={'post__item_container'}>
                             <div className={'post__item_logo'}>
                                 <img src={post.author.avatar} alt={'Friend logo'} className={'post__item_img'}/>
                             </div>
 
                             <div className={'post__item_text'}>
-                                <h1  className={'post__item_name'}>{post.author.name}</h1>
+                                <h1 className={'post__item_name'}>{post.author.name}</h1>
                                 <p className={'z'}>{post.createdData}</p>
                             </div>
                         </li>
