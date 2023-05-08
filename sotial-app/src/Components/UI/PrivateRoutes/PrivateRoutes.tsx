@@ -2,14 +2,16 @@ import React, {FC} from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {routes} from "./data";
 import Loy from "../Loy/Loy";
+import {useAuth} from "../Provider/useAuth";
+import Auth from "../../Pages/Auth/Auth";
 
 const PrivateRoutes:FC = () => {
-    const isAuth = true;
+    const {user} = useAuth()
     return (
         <BrowserRouter>
             <Routes>
                 {routes.map(route => {
-                    if(route.auth && !isAuth){
+                    if(route.auth && !user){
                         return false;
                     }
                     return (
@@ -18,7 +20,13 @@ const PrivateRoutes:FC = () => {
                         key={`route ${route.path}`}
                         element={
                             <>
-                                <Loy><route.component /></Loy>
+                                <Loy>
+                                    {route.auth && !user ? (
+                                        <Auth/>
+                                        ) : (
+                                        <route.component />
+                                    )}
+                                </Loy>
                             </>
                         }
                         />

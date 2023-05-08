@@ -1,5 +1,4 @@
 import {Dispatch, SetStateAction} from "react";
-import friends from "./img/friends.png";
 
 export type TypeSetState<T> = Dispatch<SetStateAction<T>>
 

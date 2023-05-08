@@ -3,17 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import PrivateRoutes from "./Components/UI/PrivateRoutes/PrivateRoutes";
 import * as firebase from "firebase/app";
+import {AuthProvider} from "./Components/UI/Provider/ProviderAuth";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDuaaC63PgQdaJmWJwOKTvxohZ_NFUbJfc",
-    authDomain: "sotial-app-fbcf5.firebaseapp.com",
-    projectId: "sotial-app-fbcf5",
-    storageBucket: "sotial-app-fbcf5.appspot.com",
-    messagingSenderId: "556835618879",
-    appId: "1:556835618879:web:129151b40a890fe966388a",
-    measurementId: "G-HWEYTEZTEX"
+    apiKey: "AIzaSyDrcEqSAAEuFuM6ZvymYfKkoQgIMwjKNbQ",
+    authDomain: "sotial-app-3aeab.firebaseapp.com",
+    projectId: "sotial-app-3aeab",
+    storageBucket: "sotial-app-3aeab.appspot.com",
+    messagingSenderId: "712446038558",
+    appId: "1:712446038558:web:af3b4a6bd0d9e34a00140f"
 };
+
 firebase.initializeApp(firebaseConfig);
 
 
@@ -22,6 +23,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-    <PrivateRoutes/>
+    <AuthProvider>
+        <PrivateRoutes/>
+    </AuthProvider>
 );
 

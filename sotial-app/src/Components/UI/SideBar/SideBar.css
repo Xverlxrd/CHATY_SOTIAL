@@ -61,3 +61,21 @@
     color: #333333;
 
 }
+
+.logout__container{
+    background-color: #B3CDF8;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 70px;
+    border-radius: 20px;
+}
+.logout__btn{
+    background-color: inherit;
+    width: 100px;
+    border-radius: 10px;
+    height: 40px;
+    border: 1px solid black;
+}

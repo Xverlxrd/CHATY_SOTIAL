@@ -10,3 +10,9 @@
     display: grid;
     grid-template: 1fr / 24.8% auto;
 }
+.content__container_notuser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

@@ -1,7 +1,9 @@
 import React, {FC, KeyboardEvent} from 'react';
 import {Icon} from '@iconify/react';
 import {IPost, TypeSetState} from "../../../../Types";
-import {users} from "../../../UI/SideBar/dataSideBar";
+import {collection, addDoc} from 'firebase/firestore';
+
+import {useAuth} from "../../../UI/Provider/useAuth";
 
 interface addPost {
     setPosts: TypeSetState<IPost[]>,
@@ -9,13 +11,21 @@ interface addPost {
 
 const AddPost: FC<addPost> = ({setPosts}) => {
     const [text, setText] = React.useState<string>('')
+    const {user} = useAuth()
     const addPost = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
-            
+        if (e.key === 'Enter' && user) {
+            try{
+                const baseRef = await addDoc(collection(base, 'users'), {
+
+                })
+            } catch (e){
+
+            }
+
             setPosts(prev => [
                 ...prev,
                 {
-                    author: users[0],
+                    author: user,
                     content: text,
                     createdData: '5 мин назад',
                 }
