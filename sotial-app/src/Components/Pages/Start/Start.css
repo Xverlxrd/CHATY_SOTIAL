@@ -1,0 +1,29 @@
+.lent__container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+.post__form{
+    padding-top: 32px;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.post__form_input{
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    background-color: #EFF5FF;
+    padding-left: 15px;
+}
+.post__form_btns{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.post__form_btn{
+    width: 30px;
+    height: 30px;
+
+}
