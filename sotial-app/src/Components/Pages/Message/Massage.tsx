@@ -46,8 +46,15 @@ const Massage: FC = () => {
             </div>
             <div className="chat-body">
                 {massages.map((msg, index) => (
-                    <div key={msg.createdAt} style={msg.user._id === user?._id ? {justifyContent: 'flex-end'} : {}} className="message sender-message">
-                        <h1>{msg.user.name}</h1>
+                    <div key={msg.createdAt} style={msg.user._id === user?._id ? {alignItems: 'flex-end'} : {}} className="message sender-message">
+                        <div className={'msg__item'}>
+                            <div className={'msg__item_img'}>
+                                <img src={msg.user.avatar} alt={'User Avatar'} className={'msg__item_avatar'}/>
+                            </div>
+
+                            <h1 className={'msg__item_name'}>{msg.user.name}</h1>
+                        </div>
+
                         <div className="message-text">{msg.massage}</div>
                     </div>
                 ))}
@@ -56,6 +63,7 @@ const Massage: FC = () => {
             <div className="chat-footer">
                 <form className="message-form">
                     <input
+                        maxLength={40}
                         onChange={e => setMassage(e.target.value)}
                         value={massage}
                         type="text"

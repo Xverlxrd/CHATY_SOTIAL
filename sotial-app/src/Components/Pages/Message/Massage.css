@@ -7,7 +7,8 @@
 
 .chat-header {
     background-color: #B3CDF8;
-    color: #fff;
+    color: black;
+    text-align: center;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -19,6 +20,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    row-gap: 10px;
 }
 
 .message {
@@ -28,25 +30,37 @@
 .sender-message {
     display: flex;
     color: blue;
-    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 10px;
     font-weight: 700;
-    flex-direction: row; /* выравнивание сообщения отправителя справа */
+    flex-direction: column; /* выравнивание сообщения отправителя справа */
 }
 
-.receiver-message {
+
+.msg__item{
     display: flex;
-    font-weight: 700;
-    flex-direction: row; /* выравнивание сообщения другого пользователя слева */
+    align-items: center;
+    column-gap: 15px;
+}
+.msg__item_img{
+    width: 50px;
+    height: 50px;
+}
+.msg__item_avatar{
+    width: 100%;
+    height: 100%;
+}
+.msg__item_name{
+    font-size: 20px;
+    color: black;
+}
+.message-text{
+    color: black;
+    font-size: 24px;
+    word-break: break-all;
+    word-wrap: anywhere;
 }
 
-.message-sender {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.message-text {
-    margin-bottom: 5px;
-}
 
 .chat-footer {
     background-color: #eee;

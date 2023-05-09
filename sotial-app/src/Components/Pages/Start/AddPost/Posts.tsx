@@ -18,19 +18,22 @@ const Posts: FC = () => {
 
     React.useEffect(() => {
         const unsub = onSnapshot(collection(base, 'posts', ), doc => {
+            const arr:IPost[] = []
             doc.forEach((d:any) => {
-                setPosts(prev => [...prev, d.data()])
+                arr.push(d.data())
             })
+            setPosts(arr.sort((a,b) => parseInt(a.createdData) - parseInt(b.createdData)))
         })
 
         return () => {
             unsub()
         }
     }, [])
+
     return (
         <>
             {posts.map(post => (
-                <div key={post.author._id} className={'post__item'}>
+                <div key={post.createdData} className={'post__item'}>
                     <Link to={`/profile/${post.author._id}`}>
                         <li className={'post__item_container'}>
                             <div className={'post__item_logo'}>
