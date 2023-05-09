@@ -2,13 +2,31 @@ import React, {FC} from 'react';
 import {IPost} from "../../../../Types";
 import {Link} from "react-router-dom";
 import './Posts.css';
+import {useAuth} from "../../../UI/Provider/useAuth";
+import {onSnapshot, doc, collection} from 'firebase/firestore'
 
 interface IPosts {
     posts: IPost[]
 }
 
 
-const Posts: FC<IPosts> = ({posts}) => {
+const Posts: FC = () => {
+    const {base} = useAuth()
+    const [posts, setPosts] = React.useState<IPost[]>([
+
+    ])
+
+    React.useEffect(() => {
+        const unsub = onSnapshot(collection(base, 'posts', ), doc => {
+            doc.forEach((d:any) => {
+                setPosts(prev => [...prev, d.data()])
+            })
+        })
+
+        return () => {
+            unsub()
+        }
+    }, [])
     return (
         <>
             {posts.map(post => (

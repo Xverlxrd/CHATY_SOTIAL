@@ -12,11 +12,7 @@ export const nav = [
         link: '/',
     },
     {
-        title: 'Фото',
-        link: '/profile',
-    },
-    {
-        title: 'Видео',
-        link: '/profile',
+        title: 'Сообщения',
+        link: '/messages',
     },
 ]

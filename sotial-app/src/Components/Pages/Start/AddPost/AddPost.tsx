@@ -2,34 +2,27 @@ import React, {FC, KeyboardEvent} from 'react';
 import {Icon} from '@iconify/react';
 import {IPost, TypeSetState} from "../../../../Types";
 import {collection, addDoc} from 'firebase/firestore';
-
-import {useAuth} from "../../../UI/Provider/useAuth";
+import {useAuth} from "../../../UI/Provider/useAuth"
 
 interface addPost {
     setPosts: TypeSetState<IPost[]>,
 }
 
-const AddPost: FC<addPost> = ({setPosts}) => {
+const AddPost: FC = () => {
     const [text, setText] = React.useState<string>('')
-    const {user} = useAuth()
-    const addPost = (e: KeyboardEvent<HTMLInputElement>) => {
+    const {user, base} = useAuth()
+    const addPost = async (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && user) {
             try{
-                const baseRef = await addDoc(collection(base, 'users'), {
-
-                })
-            } catch (e){
-
-            }
-
-            setPosts(prev => [
-                ...prev,
-                {
+                const docRef = await addDoc(collection(base, 'posts'), {
                     author: user,
                     content: text,
-                    createdData: '5 мин назад',
-                }
-            ])
+                    createdDate: '10 мин назад'
+                })
+                console.log(docRef)
+            } catch (e: any){
+
+            }
             setText('');
 
         }

@@ -1,8 +1,9 @@
 import React, {FC} from "react";
 import {IUser, TypeSetState} from "../../../Types";
 import {getAuth, onAuthStateChanged, Auth} from 'firebase/auth';
-import {getFirestore} from 'firebase/firestore';
+import {getFirestore, Firestore} from 'firebase/firestore';
 import {users} from "../SideBar/dataSideBar";
+
 
 interface AuthProviderProps {
     children: any
@@ -12,6 +13,7 @@ interface IContext {
     user: IUser | null
     setUser: TypeSetState<IUser | null>
     gAuth: Auth
+    base: Firestore
 }
 
 export const AuthContext = React.createContext<IContext>({} as IContext)
@@ -28,7 +30,7 @@ export const AuthProvider:FC<AuthProviderProps> = ({children}) => {
                 setUser({
                     _id: authUser.uid,
                     avatar: users[1].avatar,
-                    name: authUser.displayName || ''
+                    name: authUser.displayName || '',
                 })
             }else{
                 setUser(null)
@@ -45,9 +47,9 @@ export const AuthProvider:FC<AuthProviderProps> = ({children}) => {
             setUser,
             gAuth,
         base
-    }), [user, gAuth])
+    }), [user, gAuth, base])
 
-    return <AuthContext.Provider value={{user, setUser, gAuth}}>
+    return <AuthContext.Provider value={values}>
         {children}
     </AuthContext.Provider>
 }
