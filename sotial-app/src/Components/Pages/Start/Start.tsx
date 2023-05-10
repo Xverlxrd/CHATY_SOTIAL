@@ -8,7 +8,9 @@ const Start = () => {
     return (
         <div className={'lent__container'}>
             <AddPost />
-            <Posts />
+            <div className={'post__list'}>
+                <Posts />
+            </div>
         </div>
     );
 };

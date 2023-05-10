@@ -22,6 +22,9 @@ const Posts: FC = () => {
             doc.forEach((d:any) => {
                 arr.push(d.data())
             })
+            arr.map(ar => {
+                console.log(ar.createdData)
+            })
             setPosts(arr.sort((a,b) => parseInt(a.createdData) - parseInt(b.createdData)))
         })
 
@@ -32,7 +35,7 @@ const Posts: FC = () => {
 
     return (
         <>
-            {posts.map(post => (
+            {posts.map((post, index) => (
                 <div key={post.createdData} className={'post__item'}>
                     <Link to={`/profile/${post.author._id}`}>
                         <li className={'post__item_container'}>

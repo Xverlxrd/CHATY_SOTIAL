@@ -3,6 +3,11 @@
     flex-direction: column;
     row-gap: 50px;
 }
+.post__list{
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 30px;
+}
 .post__form{
     padding-top: 32px;
     display: flex;

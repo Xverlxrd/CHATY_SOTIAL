@@ -17,9 +17,8 @@ const AddPost: FC = () => {
                 const docRef = await addDoc(collection(base, 'posts'), {
                     author: user,
                     content: text,
-                    createdDate: Date.now()
+                    createdData: Date.now()
                 })
-                console.log(docRef)
             } catch (e: any){
 
             }
